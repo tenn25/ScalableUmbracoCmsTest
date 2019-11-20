@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<msdeploy.iisApp>
+<iisApp path="umbraco" />
+  <!-- managedRuntimeVersion="v4.0" /> -->
+  <setAcl path="umbraco"
+ 		setAclAccess="Read, Write, Modify" />
+
+  <!-- Runs SQL script to create login and assign permissions, requires transacted="false" 
+	This script runs as the database administrator provided in parameters.xml 
+  -->
+  <dbfullsql path="installSQL1.sql" transacted="false" />
+  <dbfullsql path="installSQL2.sql" transacted="false" />
+  <alias from="Index.cshtml" to="umbraco/Umbraco/Install/Views/Index.cshtml" />
+
+</msdeploy.iisApp>
